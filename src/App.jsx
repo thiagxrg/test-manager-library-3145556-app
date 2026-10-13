@@ -173,7 +173,7 @@ export default function App() {
         <button className="logout" onClick={logout}>Cerrar sesión</button>
       </aside>
 
-      <main className="content">
+      <main className="content">\n        <section className="hero">\n          <div className="hero-copy">\n            <div className="brand">Manager Library Control</div>\n            <h1>Tu biblioteca, en un lienzo moderno.</h1>\n            <p className="muted">Gestiona catalogo, socios, prestamos, vencidos y reportes con un panel rapido y brillante.</p>\n          </div>\n          <div className="hero-art">???</div>\n        </section>
         <header className="topbar">
           <h1>{tabs.find(t => t.id === active)?.label}</h1>
         </header>
