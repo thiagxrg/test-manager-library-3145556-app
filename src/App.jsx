@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { login, api } from './api';
 
 const tabs = [
-  { id: 'dashboard', label: 'Dashboard' },
-  { id: 'books', label: 'Libros' },
-  { id: 'members', label: 'Miembros' },
-  { id: 'loans', label: 'Préstamos' },
-  { id: 'overdue', label: 'Vencidos' },
-  { id: 'report', label: 'Reporte' },
+  { id: 'dashboard', label: '\u{1F3E0} Dashboard' },
+  { id: 'books', label: '\u{1F4DA} Libros' },
+  { id: 'members', label: '\u{1F465} Miembros' },
+  { id: 'loans', label: '\u{1F91D} Prestamos' },
+  { id: 'overdue', label: '\u{23F0} Vencidos' },
+  { id: 'report', label: '\u{1F4CA} Reporte' },
 ];
 
 export default function App() {
@@ -133,7 +133,8 @@ export default function App() {
     return (
       <div className="auth-shell">
         <form className="auth-card" onSubmit={doLogin}>
-          <div className="brand">Manager Library</div>
+          <div className="cover big">??</div>
+        <div className="brand">Manager Library</div>
           <h1>Iniciar sesión</h1>
           <p className="muted">Accede al panel de administración.</p>
           <label>Usuario
@@ -160,6 +161,7 @@ export default function App() {
   return (
     <div className="layout">
       <aside className="sidebar">
+        <div className="cover big">??</div>
         <div className="brand">Manager Library</div>
         <nav>
           {tabs.map(t => (
@@ -202,8 +204,9 @@ export default function App() {
                 <div className="grid">
                   {books.items.map(b => (
                     <article className="card" key={b.id}>
-                      <h3>{b.title}</h3>
-                      <p className="muted">{b.author}</p>
+                      <div className="cover" style={{marginBottom:'.75rem'}}>{b.title?.[0] || 'B'}</div>
+                      <h3 className="book-title">{b.title}</h3>
+                      <p className="book-author">{b.author}</p>
                       <div className="row"><span className="badge">{b.category?.name}</span>
                         <span className={b.available_copies > 0 ? 'badge ok' : 'badge warn'}>{b.available_copies} / {b.total_copies}</span>
                       </div>
@@ -227,6 +230,7 @@ export default function App() {
                 <div className="grid">
                   {members.items.map(m => (
                     <article className="card" key={m.id}>
+                      <div className="cover" style={{marginBottom:'.75rem'}}>{m.full_name?.[0] || 'M'}</div>
                       <h3>{m.full_name}</h3>
                       <p className="muted">{m.document_number}</p>
                       <div className="row"><span className="badge">Préstamos activos {m.active_loans ?? 0}</span></div>

@@ -287,3 +287,4 @@ tbody tr:last-child td { border-bottom:0; }
   .topbar { align-items:flex-start; }
   .toolbar { grid-template-columns:minmax(180px,1fr); }
 }
+.cover.big { width:64px; height:84px; font-size:2rem; margin:0 auto 1rem; transform:none; border-radius:14px; }
