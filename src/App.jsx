@@ -13,7 +13,7 @@ const tabs = [
 export default function App() {
   const [token, setToken] = useState(() => localStorage.getItem('token') || '');
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('change-me');
+  const [password, setPassword] = useState('ManLib2026!');
   const [authError, setAuthError] = useState('');
   const [active, setActive] = useState('dashboard');
   const [globalError, setGlobalError] = useState('');
